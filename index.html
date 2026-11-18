@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>舟守はるな | リポーター・ライター</title>
+  <meta name="description" content="リポーター・ライター 舟守はるなの公式プロフィールサイトです。">
+  <meta property="og:title" content="舟守はるな | リポーター・ライター">
+  <meta property="og:description" content="リポーター・ライター 舟守はるなの公式プロフィールサイトです。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --paper: #fffdf9;
+      --ink: #2b2723;
+      --muted: #7a7067;
+      --line: #e3dace;
+      --accent: #9a7b5a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+      line-height: 2;
+      letter-spacing: 0.06em;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .en { font-family: "Cormorant Garamond", serif; letter-spacing: 0.12em; }
+
+    /* ナビ */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247, 243, 236, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav ul {
+      max-width: 880px; margin: 0 auto; padding: 14px 24px;
+      display: flex; justify-content: flex-end; gap: 28px; list-style: none;
+    }
+    nav a { text-decoration: none; font-size: 15px; color: var(--muted); }
+    nav a:hover { color: var(--ink); }
+
+    /* トップ */
+    header.hero {
+      min-height: 78vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 80px 24px;
+    }
+    .hero .role { color: var(--accent); font-size: 17px; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(40px, 8vw, 64px); font-weight: 600; letter-spacing: 0.2em; line-height: 1.4; }
+    .hero .romaji { color: var(--muted); font-size: 20px; margin-top: 10px; }
+    .hero .rule { width: 48px; height: 1px; background: var(--accent); margin: 36px auto; }
+    .hero p.lead { font-size: 16px; color: var(--muted); }
+
+    /* セクション共通 */
+    section { max-width: 880px; margin: 0 auto; padding: 96px 24px; }
+    section + section { border-top: 1px solid var(--line); }
+    .heading { text-align: center; margin-bottom: 56px; }
+    .heading .en { display: block; font-size: 15px; color: var(--accent); font-style: italic; }
+    .heading h2 { font-size: 26px; font-weight: 600; letter-spacing: 0.2em; }
+
+    /* プロフィール */
+    .profile { display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; }
+    .photo {
+      width: 180px; aspect-ratio: 1 / 1; border-radius: 50%; margin: 0 auto;
+      border: 1px solid var(--line); outline: 6px solid var(--paper); overflow: hidden;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; }
+    .profile h3 { font-size: 22px; font-weight: 600; }
+    .profile .yomi { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    .profile p + p { margin-top: 1em; }
+    .career { margin-top: 32px; list-style: none; border-top: 1px solid var(--line); }
+    .career li { display: flex; gap: 24px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .career .year { color: var(--accent); min-width: 4.5em; }
+
+    /* 実績 */
+    .works-group + .works-group { margin-top: 56px; }
+    .works-group h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; padding-left: 14px; border-left: 2px solid var(--accent); line-height: 1.6; }
+    .works { list-style: none; }
+    .works li { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 7em 1fr; gap: 16px; }
+    .works .date { color: var(--muted); font-size: 14px; padding-top: 2px; }
+    .works .title { font-size: 16px; }
+    .works .title a { text-decoration: none; border-bottom: 1px solid var(--line); }
+    .works .title a:hover { border-color: var(--accent); }
+    .works .media { display: block; color: var(--muted); font-size: 13px; }
+
+    /* SNS */
+    .sns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 560px; margin: 0 auto; }
+    .sns a {
+      display: block; background: var(--paper); border: 1px solid var(--line);
+      padding: 28px 20px; text-align: center; text-decoration: none;
+      transition: border-color .2s, transform .2s;
+    }
+    .sns a:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .sns .name { font-size: 22px; }
+    .sns .id { display: block; color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .sns-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 32px; }
+
+    footer { text-align: center; padding: 48px 24px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+    @media (max-width: 640px) {
+      nav ul { justify-content: center; gap: 22px; }
+      section { padding: 72px 20px; }
+      .profile { grid-template-columns: 1fr; gap: 32px; }
+      .photo { width: 160px; }
+      .works li { grid-template-columns: 1fr; gap: 2px; }
+      .sns { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#profile">プロフィール</a></li>
+      <li><a href="#works">実績</a></li>
+      <li><a href="#sns">SNS</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="role">リポーター ／ ライター</p>
+    <h1>舟守はるな</h1>
+    <p class="romaji en">Haruna Funamori</p>
+    <div class="rule"></div>
+    <p class="lead">横浜の「いま」を、声とことばで届ける。</p>
+  </header>
+
+  <section id="profile">
+    <div class="heading">
+      <span class="en">Profile</span>
+      <h2>プロフィール</h2>
+    </div>
+    <div class="profile">
+      <div class="photo"><img src="photo.png" alt="舟守はるなのプロフィール写真"></div>
+      <div>
+        <h3>舟守 はるな</h3>
+        <p class="yomi">ふなもり はるな ／ 2004年生まれ ／ 早稲田大学在学中</p>
+        <p>横浜生まれ、横浜育ち。早稲田大学に在学しながら、第44回横浜開港祭親善大使を務めたことをきっかけに、リポーター・ライターとして活動しています。</p>
+        <p>横浜の観光情報サイト「アットヨコハマ」のナビゲーターとして、マリンFMでのラジオ出演や体験レポートの執筆を担当。そのほか、映画祭やファッションイベント、音楽フェスなどの現地取材も行っています。街の魅力や現場の熱気を、ラジオと記事の両方でお届けしています。</p>
+        <ul class="career">
+          <li><span class="year">2004年</span><span>神奈川県横浜市に生まれる</span></li>
+          <li><span class="year">2025年</span><span>第44回 横浜開港祭 親善大使</span></li>
+          <li><span class="year">2025年</span><span>「遊ぼう横浜」「Scketto」「アクトレスプレス」などで取材・執筆を開始</span></li>
+          <li><span class="year">2026年</span><span>アットヨコハマ ナビゲーターとして、マリンFM「はまリポ放送部」「はまリポ情報部」に出演</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="heading">
+      <span class="en">Works</span>
+      <h2>実績・お仕事</h2>
+    </div>
+
+    <div class="works-group">
+      <h3>ラジオ・リポーター</h3>
+      <ul class="works">
+        <li><span class="date">2026.11</span><span class="title">はまリポ放送部 100回記念スペシャル<span class="media">マリンFM</span></span></li>
+        <li><span class="date">2026.11</span><span class="title">はまリポ情報部 出張配信（ホッチポッチ横浜・象の鼻パーク）<span class="media">マリンFM ／ アットヨコハマ公式Instagramライブ</span></span></li>
+        <li><span class="date">2026.06</span><span class="title">はまリポ放送部 開港祭スペシャル ゲスト出演<span class="media">マリンFM</span></span></li>
+        <li><span class="date">2026.04</span><span class="title">「PRIME TIME」ゲスト出演<span class="media">FMヨコハマ</span></span></li>
+        <li><span class="date">2026.04</span><span class="title">「Lovely Day♡」街角リポート ゲスト出演<span class="media">FMヨコハマ</span></span></li>
+        <li><span class="date">2026〜</span><span class="title">はまリポ放送部 ／ はまリポ情報部（第2・第4土曜 18:10〜）レギュラー出演<span class="media">マリンFM（横浜ハンマーヘッド スタジオ）</span></span></li>
+      </ul>
+    </div>
+
+    <div class="works-group">
+      <h3>ライター・取材記事</h3>
+      <ul class="works">
+        <li><span class="date">2026.07</span><span class="title"><a href="https://at-yokohama.net/features/342" target="_blank" rel="noopener">浴衣でアフタヌーンティー2026 体験レポート</a><span class="media">アットヨコハマ</span></span></li>
+        <li><span class="date">2026.05</span><span class="title">第4回 横浜国際映画祭 取材リポート<span class="media">Scketto</span></span></li>
+        <li><span class="date">2026.01</span><span class="title"><a href="https://at-yokohama.net/features/229" target="_blank" rel="noopener">THE MOVEUM YOKOHAMA by TOYOTA GROUP 体験レポート</a><span class="media">アットヨコハマ</span></span></li>
+        <li><span class="date">2025.11</span><span class="title"><a href="https://asobo-yokohama.com/report/christmasmarket2025report/" target="_blank" rel="noopener">横浜赤レンガ倉庫 クリスマスツリー点灯式 おすすめグルメ・グッズ</a><span class="media">遊ぼう横浜</span></span></li>
+        <li><span class="date">2025.09</span><span class="title"><a href="https://scketto.com/news/20250922" target="_blank" rel="noopener">ワセコレ OC公演2025 リポート</a><span class="media">Scketto</span></span></li>
+        <li><span class="date">2025.08</span><span class="title"><a href="https://actresspress.com/tif20250801/" target="_blank" rel="noopener">TIF2025 グランドオープニング 取材リポート</a><span class="media">アクトレスプレス</span></span></li>
+        <li><span class="date">2025.08</span><span class="title">石川町エリア 夏グルメ巡り<span class="media">遊ぼう横浜</span></span></li>
+        <li><span class="date">2025.07</span><span class="title">第1回 横浜七夕まつり イベントレポート<span class="media">遊ぼう横浜</span></span></li>
+        <li><span class="date">2025.07</span><span class="title">関内エリア 麺グルメ巡り<span class="media">遊ぼう横浜</span></span></li>
+      </ul>
+    </div>
+
+    <div class="works-group">
+      <h3>そのほか</h3>
+      <ul class="works">
+        <li><span class="date">2025.12</span><span class="title">早稲田祭2025 アナウンス研究会 サテライトスタジオ出演・記事構成<span class="media">早稲田大学アナウンス研究会</span></span></li>
+        <li><span class="date">2025.10</span><span class="title">セブン-イレブン マルチコピー機 店頭POPモデル<span class="media">ハロウィンの写真プリント企画</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="sns">
+    <div class="heading">
+      <span class="en">SNS</span>
+      <h2>SNS</h2>
+    </div>
+    <div class="sns">
+      <a href="https://x.com/harunafunamori_" target="_blank" rel="noopener">
+        <span class="name en">X</span>
+        <span class="id">@harunafunamori_</span>
+      </a>
+      <a href="https://www.instagram.com/harunafunamori_/" target="_blank" rel="noopener">
+        <span class="name en">Instagram</span>
+        <span class="id">@harunafunamori_</span>
+      </a>
+    </div>
+    <p class="sns-note">最新の活動はSNSでお知らせしています。</p>
+  </section>
+
+  <footer>
+    <p class="en">&copy; 2026 Haruna Funamori</p>
+  </footer>
+
+</body>
+</html>
